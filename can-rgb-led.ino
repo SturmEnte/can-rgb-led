@@ -3,12 +3,16 @@
 #define BLUE_PIN  10
 
 void setup() {
-  analogWrite(RED_PIN, 255);
-  analogWrite(GREEN_PIN, 255);
-  analogWrite(BLUE_PIN, 255);
+  setLed(0, 0, 0);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 
+}
+
+void setLed(short red, short green, short blue) {
+  analogWrite(RED_PIN, red);
+  analogWrite(GREEN_PIN, green);
+  analogWrite(BLUE_PIN, blue);
 }
