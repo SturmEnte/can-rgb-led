@@ -30,6 +30,10 @@ void setLed(short red, short green, short blue) {
 
 // Returns wether the connection was successfully established (true = yes)
 bool connect() {
+
+  Serial.print("Connecting to ");
+  Serial.println(SSID);
+
   setLed(255, 255, 0);
   WiFi.begin(SSID, WIFI_PASS);
 
@@ -55,5 +59,12 @@ bool connect() {
   }
 
   setLed(0, 255, 0);
+
+  Serial.println("WiFi connected");
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+  Serial.print("MAC adress: ");
+  Serial.println(WiFi.macAddress());
+
   return true;
 }
